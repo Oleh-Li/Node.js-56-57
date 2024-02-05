@@ -1,7 +1,9 @@
 import users from "./users.mjs";
-import {getCurrentMonth} from "./date/index.mjs";
+import {getCurrentMonth, isLeapYear} from "./date/index.mjs";
+import {diselCars, eCars} from "./cars.mjs"
 
-console.log(users);
+console.log(users, isLeapYear(2024));
+console.log(eCars)
 
 
 
