@@ -20,8 +20,9 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not found' })
 })
 
+//use for next(error) тому що тільки обробка помилок використовує 4 параметри
 app.use((err, req, res, next) => {
-  const {status = 500, message = "Server error"} = err;
+  const { status = 500, message = "Server error" } = err;
   res.status(status).json({ message, })
 })
 
