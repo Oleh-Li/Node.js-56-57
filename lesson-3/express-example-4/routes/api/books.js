@@ -1,27 +1,57 @@
-const express = require("express");
+const express = require("express")
 
-const books = require("../../data/books");
+const books = require("../../data/books")
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/", (req, res)=> {
-    res.json(books);
+router.get("/", (req, res) => {
+    res.json(books)
 })
 
-router.get("/:id", (req, res)=> {
+router.get("/:id", (req, res) => {
     res.json(books[0])
 })
 
-router.post("/", (req, res)=> {
+router.post("/:id", (req, res) => {
     res.json(books[0])
 })
 
-router.put("/:id", (req, res)=> {
+router.put("/:id", (req, res) => {
     res.json(books[0])
 })
 
-router.delete("/:id", (req, res)=> {
+router.delete("/:id", (req, res) => {
     res.json(books[0])
 })
 
-module.exports = router;
+module.exports = router
+
+
+//WAS BEFORE
+// const express = require("express");
+
+// const books = require("../../data/books");
+
+// const router = express.Router();
+
+// router.get("/", (req, res)=> {
+//     res.json(books);
+// })
+
+// router.get("/:id", (req, res)=> {
+//     res.json(books[0])
+// })
+
+// router.post("/", (req, res)=> {
+//     res.json(books[0])
+// })
+
+// router.put("/:id", (req, res)=> {
+//     res.json(books[0])
+// })
+
+// router.delete("/:id", (req, res)=> {
+//     res.json(books[0])
+// })
+
+// module.exports = router;
