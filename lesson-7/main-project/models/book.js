@@ -1,7 +1,7 @@
-const {Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose");
 const Joi = require("joi");
 
-const {handleMongooseError} = require("../helpers");
+const { handleMongooseError } = require("../helpers");
 
 const genreList = ["fantastic", "love"];
 const dateRegexp = /^\d{2}-\d{2}-\d{4}$/;
@@ -29,8 +29,14 @@ const bookSchema = new Schema({
         // 16-10-2009
         match: dateRegexp,
         required: true,
-   }
-}, {versionKey: false, timestamps: true});
+    },
+    owner: {
+        type: Schema.Types.ObjectId,
+        //ref це назва колекції з якої буде ID
+        ref: "user",
+        required: true
+    }
+}, { versionKey: false, timestamps: true });
 
 bookSchema.post("save", handleMongooseError);
 
